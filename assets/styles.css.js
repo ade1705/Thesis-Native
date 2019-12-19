@@ -1,6 +1,6 @@
 import {Platform, StyleSheet} from "react-native";
 
-const primaryColor = '#2e3092';
+const primaryColor = 'green';
 const blueColor = '#0261FE';
 const orangeColor = '#EE5C3E';
 const greenColor = '#48AD76';
@@ -105,6 +105,9 @@ const styles = StyleSheet.create({
     },
     alignItemsCenter: {
         alignItems: 'center'
+    },
+    alignItemsEnd: {
+        alignItems: 'flex-end'
     },
     justifyContentsEnd: {
         justifyContent: 'flex-end',

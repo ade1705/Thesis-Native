@@ -37,12 +37,11 @@ class SplashScreen extends Component {
         });
 
         if (!result.cancelled) {
-            this.setState({ image: result.uri });
+            this.props.navigation.navigate('DiagnosisScreen', {imageUri: result.uri});
         }
     };
 
     render() {
-        let { image } = this.state;
         return (
             <ImageBackground
                 source = {{ uri: imageBackground }}
@@ -58,12 +57,12 @@ class SplashScreen extends Component {
                     <Text style={[styles.TextWhite, styles.mutedText]}>TUT Mcomp. Computer Systems Engineering.</Text>
                     <View style={[styles.marginTop40]}>
                         <TouchableOpacity
-                            style={[styles.whiteBackground, styles.padding20, styles.borderRadius, styles.flexRow, styles.alignItemsCenter]}
+                            style={[styles.whiteBackground, styles.padding15, styles.borderRadius, styles.flexRow, styles.alignItemsCenter]}
                             onPress={this._pickImage}>
                             <EvilIcons name="image" size={30}/>
                             <Text style={[styles.largeText]}>Choose Leaf Picture</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.whiteBackground, styles.padding20, styles.borderRadius, styles.flexRow, styles.alignItemsCenter, styles.marginTop20, ]}>
+                        <TouchableOpacity style={[styles.whiteBackground, styles.padding15, styles.borderRadius, styles.flexRow, styles.alignItemsCenter, styles.marginTop20, ]}>
                             <EvilIcons name="camera" size={30}/>
                             <Text style={[styles.largeText]}>Take Photo of Leaf</Text>
                         </TouchableOpacity>
